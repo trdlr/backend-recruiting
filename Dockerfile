@@ -20,6 +20,10 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 # Set working directory
 WORKDIR /workspace
 
+# Create a non-root user and switch to it
+RUN useradd -ms /bin/bash vscode
+USER vscode
+
 # Install Laravel dependencies
 COPY . /workspace
 RUN composer install && chmod -R 777 storage bootstrap/cache
