@@ -1,57 +1,20 @@
 {
-    "name": "Laravel Development Environment",
-    "dockerComposeFile": "docker-compose.yml",
+    "name": "Laravel Codespace",
+    "dockerComposeFile": "../docker-compose.yml",
     "service": "app",
     "workspaceFolder": "/workspace",
-    "forwardPorts": [8000, 8080, 3306],
-    "portsAttributes": {
-        "8000": {
-            "label": "Laravel Application",
-            "onAutoForward": "notify"
-        },
-        "8080": {
-            "label": "phpMyAdmin",
-            "onAutoForward": "notify"
-        },
-        "3306": {
-            "label": "MySQL",
-            "onAutoForward": "notify"
-        }
+    "settings": {
+      "editor.formatOnSave": true,
+      "editor.tabSize": 4,
+      "files.autoSave": "afterDelay"
     },
-    "postCreateCommand": "composer install && php artisan key:generate && php artisan migrate --seed",
-    "customizations": {
-        "vscode": {
-            "extensions": [
-                "bmewburn.vscode-intelephense-client",
-                "onecentlin.laravel-blade",
-                "amiralizadeh9480.laravel-extra-intellisense",
-                "ryannaddy.laravel-artisan",
-                "mikestead.dotenv",
-                "calebporzio.better-phpunit",
-                "xdebug.php-debug",
-                "neilbrayfield.php-docblocker",
-                "ms-azuretools.vscode-docker",
-                "mtxr.sqltools",
-                "mtxr.sqltools-driver-mysql"
-            ],
-            "settings": {
-                "php.validate.enable": true,
-                "php.suggest.basic": true,
-                "editor.formatOnSave": true,
-                "files.trimTrailingWhitespace": true,
-                "terminal.integrated.defaultProfile.linux": "bash",
-                "sqltools.connections": [
-                    {
-                        "name": "Laravel Database",
-                        "driver": "MySQL",
-                        "server": "database",
-                        "port": 3306,
-                        "database": "laravel",
-                        "username": "sail",
-                        "password": "password"
-                    }
-                ]
-            }
-        }
-    }
-}
+    "extensions": [
+      "bmewburn.vscode-intelephense-client",
+      "mikestead.dotenv",
+      "onecentlin.laravel-blade",
+      "onecentlin.laravel5-snippets",
+      "dbaeumer.vscode-eslint"
+    ],
+    "postCreateCommand": "composer install && npm install && npm run dev && php artisan migrate",
+    "remoteUser": "vscode"
+  }
