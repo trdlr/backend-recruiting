@@ -11,6 +11,8 @@
       "onecentlin.laravel-blade",
       "onecentlin.laravel5-snippets",
       "dbaeumer.vscode-eslint",
-      "qwtel.sqlite-viewer"
-    ]
+      "qwtel.sqlite-viewer",
+      "rangav.vscode-thunder-client"
+    ],
+    "postCreateCommand": "composer install && php artisan key:generate && php artisan migrate"
 }
