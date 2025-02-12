@@ -10,6 +10,7 @@
       "mikestead.dotenv",
       "onecentlin.laravel-blade",
       "onecentlin.laravel5-snippets",
-      "dbaeumer.vscode-eslint"
+      "dbaeumer.vscode-eslint",
+      "qwtel.sqlite-viewer"
     ]
 }
