@@ -14,5 +14,5 @@
       "qwtel.sqlite-viewer",
       "rangav.vscode-thunder-client"
     ],
-    "postCreateCommand": "composer install && php artisan key:generate && php artisan migrate"
+    "postCreateCommand": "cp .env.example .env && composer install && php artisan key:generate && php artisan migrate --force"
 }
