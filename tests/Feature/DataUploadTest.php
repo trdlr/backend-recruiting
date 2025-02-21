@@ -14,8 +14,6 @@ class DataUploadTest extends TestCase
      */
     public function test_upload_data(): void
     {
-        $this->markTestSkipped();
-
         $response = $this->post('/api/data/upload', [
             'file' => UploadedFile::fake()->createWithContent('./metrics_data.csv', file_get_contents('./metrics_data.csv')),
         ]);
