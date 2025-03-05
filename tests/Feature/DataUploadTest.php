@@ -5,6 +5,7 @@ namespace Tests\Feature;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Facades\DB;
 use Tests\TestCase;
 
 class DataUploadTest extends TestCase
@@ -14,6 +15,9 @@ class DataUploadTest extends TestCase
      */
     public function test_upload_data(): void
     {
+        DB::table('metric_values')->truncate();
+        DB::table('metrics')->truncate();
+
         $response = $this->post('/api/data/upload', [
             'file' => UploadedFile::fake()->createWithContent('./metrics_data.csv', file_get_contents('./metrics_data.csv')),
         ]);

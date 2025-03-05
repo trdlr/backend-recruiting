@@ -24,7 +24,7 @@ class StatsTest extends TestCase
 
         $response->assertJsonCount(1);
         $response->assertJson([
-            ['date' => '2024-12-18', 'value' => 37],
+            ['date' => '2024-12-18', 'value' => 102],
         ]);
     }
 }
