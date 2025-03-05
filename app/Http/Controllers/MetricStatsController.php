@@ -11,7 +11,7 @@ class MetricStatsController extends Controller
     {
         $output = [];
 
-        $output[] = ['date' => '2024-12-18', 'value' => 37];
+        $output[] = ['date' => '2024-12-18', 'value' => 102];
 
         return response()->json($output);
     }
