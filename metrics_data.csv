@@ -1,4 +1,4 @@
-achieved_at,metric_key,external_id,value
+achieved_at,metric_key,user_id,value
 2025-01-13,distance_ran,1023,66
 2024-11-30,workouts_completed,1046,21
 2024-11-14,distance_ran,1096,20

@@ -20,7 +20,7 @@ return new class extends Migration
         Schema::create('metric_values', function (Blueprint $table) {
             $table->id();
             $table->foreignId('metric_id')->constrained()->onDelete('cascade');
-            $table->string('external_id', 100)->index(); // identifier of the person. Can be a string or a number
+            $table->string('user_id', 100)->index(); // identifier of the person. Can be a string or a number
             $table->timestamp('achieved_at'); // when they achieved the metric
             $table->decimal('value', 10, 2); // the actual value of the metric
             $table->timestamps();

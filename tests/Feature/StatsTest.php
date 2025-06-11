@@ -13,7 +13,7 @@ class StatsTest extends TestCase
      */
     public function test_stats(): void
     {
-        $response = $this->get('/api/stats/user-daily?external_id=1094&metric_key=distance_ran');
+        $response = $this->get('/api/stats/user-daily?user_id=1094&metric_key=distance_ran');
         $response->assertStatus(200);
         $response->assertJsonStructure([
             '*' => [
